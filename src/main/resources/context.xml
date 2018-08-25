@@ -8,4 +8,6 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
         <property name="message" value="I'll be back"/>
     </bean>
 
+    <bean class = "quoters.InjectRandomIntAnnotationBeanPostProcessor"/>
+
 </beans>
