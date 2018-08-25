@@ -1,6 +1,6 @@
 package quoters;
 
-public class ProfilingController {
+public class ProfilingController implements ProfilingControllerMBean {
     private boolean enabled;
 
     public boolean isEnabled() {
