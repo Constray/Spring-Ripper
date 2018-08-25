@@ -10,10 +10,11 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class ProfilingHandlerBeanPostProcessor implements BeanPostProcessor {
 
-    private Map<String, Class> classMap;
+    private Map<String, Class> classMap = new TreeMap<String, Class>();
     private ProfilingController controller = new ProfilingController();
 
     public ProfilingHandlerBeanPostProcessor() throws Exception {
