@@ -3,6 +3,9 @@ package quoters;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 
+import javax.management.MBeanServer;
+import javax.management.ObjectName;
+import java.lang.management.ManagementFactory;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
@@ -12,6 +15,11 @@ public class ProfilingHandlerBeanPostProcessor implements BeanPostProcessor {
 
     private Map<String, Class> classMap;
     private ProfilingController controller = new ProfilingController();
+
+    public ProfilingHandlerBeanPostProcessor() throws Exception {
+        final MBeanServer platformMBeanServer = ManagementFactory.getPlatformMBeanServer();
+        platformMBeanServer.registerMBean(controller, new ObjectName("profiling", "name", "controller"));
+    }
 
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
         Class<?> beanClass = bean.getClass();

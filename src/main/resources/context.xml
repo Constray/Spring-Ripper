@@ -12,4 +12,6 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
 
     <bean class = "org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
 
+    <bean class = "quoters.ProfilingHandlerBeanPostProcessor"/>
+
 </beans>
