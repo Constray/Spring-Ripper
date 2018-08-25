@@ -10,4 +10,6 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
 
     <bean class = "quoters.InjectRandomIntAnnotationBeanPostProcessor"/>
 
+    <bean class = "org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
+
 </beans>
