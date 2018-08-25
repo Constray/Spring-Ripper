@@ -10,7 +10,7 @@ import java.util.Random;
 public class Config {
 
     @Bean
-    @Scope("prototype")
+    @Scope("pereodical")
     public Color color() {
         return new Color(new Random().nextInt(255)
                 , new Random().nextInt(255)
