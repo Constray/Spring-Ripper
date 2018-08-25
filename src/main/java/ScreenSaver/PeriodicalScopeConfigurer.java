@@ -3,6 +3,7 @@ package ScreenSaver;
 import javafx.util.Pair;
 import org.springframework.beans.factory.ObjectFactory;
 import org.springframework.beans.factory.config.Scope;
+import org.springframework.stereotype.Component;
 
 import java.time.Duration;
 import java.time.LocalTime;
@@ -21,11 +22,11 @@ public class PeriodicalScopeConfigurer implements Scope {
             int secondsSinceLastRequest = now().getSecond() - pair.getKey().getSecond();
             if (secondsSinceLastRequest > 3) {
                 map.put(name ,  new Pair<>(now(), objectFactory.getObject()));
-            } else {
-                map.put(name ,  new Pair<>(now(), objectFactory.getObject()));
             }
+        } else {
+            map.put(name ,  new Pair<>(now(), objectFactory.getObject()));
         }
-        return null;
+        return map.get(name).getValue();
     }
 
     public Object remove(String s) {

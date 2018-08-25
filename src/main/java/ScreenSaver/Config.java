@@ -10,11 +10,12 @@ import java.util.Random;
 public class Config {
 
     @Bean
-    @Scope("pereodical")
+    @Scope("periodical")
     public Color color() {
-        return new Color(new Random().nextInt(255)
-                , new Random().nextInt(255)
-                , new Random().nextInt(255));
+        Random random = new Random();
+        return new Color(random.nextInt(255)
+                , random.nextInt(255)
+                , random.nextInt(255));
     }
 
     @Bean
@@ -31,7 +32,7 @@ public class Config {
         final AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
         while(true) {
             context.getBean(ColorFrame.class).showOnRandomPlace();
-            Thread.sleep(500);
+            Thread.sleep(100);
         }
     }
 }
