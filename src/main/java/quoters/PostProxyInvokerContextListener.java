@@ -13,7 +13,6 @@ import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Method;
 
-@Component
 public class PostProxyInvokerContextListener implements ApplicationListener<ContextRefreshedEvent>, BeanFactoryAware {
 
     private ConfigurableListableBeanFactory beanFactory;
