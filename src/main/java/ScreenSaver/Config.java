@@ -17,6 +17,16 @@ public class Config {
                 , new Random().nextInt(255));
     }
 
+    @Bean
+    public ColorFrame colorFrame() {
+        return new ColorFrame() {
+            @Override
+            protected Color getColor() {
+                return color();
+            }
+        };
+    }
+
     public static void main(String[] args) throws InterruptedException {
         final AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
         while(true) {

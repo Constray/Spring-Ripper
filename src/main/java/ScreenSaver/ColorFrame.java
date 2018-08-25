@@ -11,9 +11,6 @@ import java.util.Random;
 @Service
 public abstract class ColorFrame extends JFrame {
 
-    @Autowired
-    private Color color;
-
     public ColorFrame(){
         setSize(200, 200);
         setVisible(true);
