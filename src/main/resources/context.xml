@@ -14,4 +14,6 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
 
     <bean class = "quoters.ProfilingHandlerBeanPostProcessor"/>
 
+    <bean class = "quoters.PostProxyInvokerContextListener"/>
+
 </beans>
